@@ -4,7 +4,7 @@ int print_specific_lenght(int original[]);
 int load();
 int edit(int original[], int edited[]);
 void print_original( int original[]);
-int print_edited(int edited[]);
+void print_edited(int edited[]);
 int unencrypt(int edited[]);
 int print_histogram(int edited[]);
 void main(){
@@ -92,8 +92,19 @@ int i;
 		printf("\n");
 	}
 }
-int print_edited(int edited[]){
-
+void print_edited(int edited[]){
+	int i;
+	if (edited == NULL) {
+		printf("Sprava nie je nacitana\n");
+	}
+	else {
+		for (i = 0; i < 1000; ++i) {
+			if(edited[i] != 0){
+				printf("%c", edited[i]);
+			}
+		}
+		printf("\n");
+	}
 }
 int unencrypt(int edited[]){
 
