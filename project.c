@@ -3,8 +3,8 @@
 int print_specific_lenght(int original[]);
 int load();
 int edit(int original[], int edited[]);
-int print_original( int original[]);
-int print_edited(int edited[]);
+void print_original( int original[]);
+void print_edited(int edited[]);
 int unencrypt(int edited[]);
 int print_histogram(int edited[]);
 void main(){
@@ -18,7 +18,7 @@ void main(){
 		switch (control_command) {
 		case 'n': original[] = load();
 			break;
-		case 'v': 
+		case 'v': print_original(original);
 			break;
 		case 'u': edited[] = edit(original);
 			break;
@@ -78,11 +78,33 @@ int i, j = 0,edited[1000];
 
 	return edited;
 }
-int print_original( int original[]){
-
+void print_original( int original[]){
+int i;
+	if (original == NULL) {
+		printf("Sprava nie je nacitana\n");
+	}
+	else {
+		for (i = 0; i < 1000; ++i) {
+			if(original[i] != 0){
+				printf("%c", original[i]);
+			}
+		}
+		printf("\n");
+	}
 }
-int print_edited(int edited[]){
-
+void print_edited(int edited[]){
+	int i;
+	if (edited == NULL) {
+		printf("Sprava nie je nacitana\n");
+	}
+	else {
+		for (i = 0; i < 1000; ++i) {
+			if(edited[i] != 0){
+				printf("%c", edited[i]);
+			}
+		}
+		printf("\n");
+	}
 }
 int unencrypt(int edited[]){
 
