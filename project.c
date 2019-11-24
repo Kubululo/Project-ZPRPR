@@ -22,7 +22,7 @@ void main(){
 			break;
 		case 'u': edited[] = edit(original);
 			break;
-		case 's': 
+		case 's': print_edited(edited);
 			break;
 		case 'd':
 			break;
