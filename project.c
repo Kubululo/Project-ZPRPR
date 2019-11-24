@@ -36,7 +36,7 @@ void main(){
 	} while (control_command != 'k');
 }
 int load(){
-FILE* f;
+	FILE* f;
 	int c, i = 0,original[1000];
 	if ((f = fopen("sifra.txt", "r")) == NULL) {
 		printf("Spravu sa nepodarilo nacitat\n");
@@ -59,7 +59,7 @@ FILE* f;
 	return original;
 }
 int edit(int original[]){
-int i, j = 0,edited[1000];
+	int i, j = 0,edited[1000];
 	if (original == NULL) {
 		printf("Sprava nie je nacitana\n");
 	}
@@ -79,7 +79,7 @@ int i, j = 0,edited[1000];
 	return edited;
 }
 void print_original( int original[]){
-int i;
+	int i;
 	if (original == NULL) {
 		printf("Sprava nie je nacitana\n");
 	}
