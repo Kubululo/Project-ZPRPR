@@ -20,7 +20,7 @@ void main(){
 			break;
 		case 'v': 
 			break;
-		case 'u': 
+		case 'u': edited[] = edit(original);
 			break;
 		case 's': 
 			break;
@@ -76,7 +76,7 @@ int i, j = 0,edited[1000];
 		}
 	}
 
-	return 0;
+	return edited;
 }
 int print_original( int original[]){
 
