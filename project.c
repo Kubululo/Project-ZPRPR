@@ -15,7 +15,7 @@ void main(){
     do {
 		control_command = getchar();
 		switch (control_command) {
-		case 'n': 
+		case 'n': original = load();
 			break;
 		case 'v': 
 			break;
@@ -35,7 +35,27 @@ void main(){
 	} while (control_command != 'k');
 }
 int load(){
+FILE* f;
+	int c, i = 0,original[1000];
+	if ((f = fopen("sifra.txt", "r")) == NULL) {
+		printf("Spravu sa nepodarilo nacitat\n");
+		return 0;
+	}
 
+	while ((c = getc(f)) != EOF) {
+		if (i < 1000) {
+			original[i] = c;
+			++i;
+		}
+		else {
+			break;
+		}
+	}
+	if (fclose(f) == EOF) {
+		printf("Subor sa nepodarilo zatvorit\n");
+	}
+
+	return original;
 }
 int edit(int original[], int edited[]){
 
