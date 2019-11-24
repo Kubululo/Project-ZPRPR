@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <ctype.h>
 int print_specific_lenght(int original[]);
 int load();
 int edit(int original[], int edited[]);
@@ -15,11 +16,11 @@ void main(){
     do {
 		control_command = getchar();
 		switch (control_command) {
-		case 'n': original = load();
+		case 'n': original[] = load();
 			break;
 		case 'v': 
 			break;
-		case 'u': 
+		case 'u': edited[] = edit(original);
 			break;
 		case 's': 
 			break;
@@ -57,8 +58,25 @@ FILE* f;
 
 	return original;
 }
-int edit(int original[], int edited[]){
+int edit(int original[]){
+int i, j = 0,edited[1000];
+	if (original == NULL) {
+		printf("Sprava nie je nacitana\n");
+	}
+	else {
+		for (i = 0; i < 1000; ++i) 
+		{
+			if (isalpha(original[i])) 
+			{
+				
+				edited[j] = toupper(original[i]);
+				
+				++j;
+			}
+		}
+	}
 
+	return edited;
 }
 int print_original( int original[]){
 
