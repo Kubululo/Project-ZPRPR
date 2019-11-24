@@ -16,11 +16,11 @@ void main(){
     do {
 		control_command = getchar();
 		switch (control_command) {
-		case 'n': original[] = load();
+		case 'n': original = load();
 			break;
 		case 'v': print_original(original);
 			break;
-		case 'u': edited[] = edit(original);
+		case 'u': edited = edit(original);
 			break;
 		case 's': print_edited(edited);
 			break;
@@ -28,7 +28,7 @@ void main(){
 			break;
 		case 'h': 
 			break;
-		case 'c': 
+		case 'c': edited = unencrypt(edited);
 			break;
 		case 'k': break;
 		default: break;
@@ -107,7 +107,32 @@ void print_edited(int edited[]){
 	}
 }
 int unencrypt(int edited[]){
+	int j = 0, k;
+	scanf("%d", &k);
+	if (k < 1 || k > 25) {
+		return 0;
+	}
 
+	if (edited == NULL) {
+		printf("Nie je k dispozicii upravena sprava\n");
+	}
+	else {
+		for (j = 0; j < 1000; ++j) 
+		{
+			
+			if (isupper(edited[j] && isalpha(edited[j]))) {
+				
+				edited[j] = edited[j] - k;
+				
+				if (!isalpha(edited[j])) {
+					edited[j] = 'Z' - k + 1;
+				}
+				printf("%c", edited[j]);
+			}
+		}
+		printf("\n");
+	}
+	return edited;
 }
 int print_histogram(int edited[]){
 
